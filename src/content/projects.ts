@@ -68,8 +68,8 @@ export const projects: Project[] = [
       },
     ],
     outcome: {
-      es: "Demo interactiva del admin + lab REST→SOAP en Vercel. Trabajo real: familias ARGO/REDAM/RUES/VUCE vía gateway (lore institucional, sin código público).",
-      en: "Interactive admin + REST→SOAP lab demo on Vercel. Real work: ARGO/REDAM/RUES/VUCE families via gateway (institutional lore, no public code).",
+      es: "Demo interactiva del admin + lab REST→SOAP en Vercel. Trabajo real: superficie de interoperabilidad ampliada de 2 a 6 rutas/familias vía gateway (nombres omitidos en CV; lore institucional sin código público).",
+      en: "Interactive admin + REST→SOAP lab demo on Vercel. Real work: interoperability surface grown from 2 to 6 route/families via gateway (names omitted on the CV; institutional lore, no public code).",
     },
     companyId: "ministerio-minas",
     demoUrl: "https://integrador-gateway-demo.vercel.app",
@@ -441,6 +441,94 @@ export const projects: Project[] = [
     preview: "/previews/hermes.png",
   },
   {
+    slug: "commodo",
+    title: "Commodo",
+    tagline: {
+      es: "Fidelización tipo puntos — sigue en producción",
+      en: "Points-style loyalty — still in production",
+    },
+    summary: {
+      es: "En Infinity Tech: sistema de fidelización (análogo a puntos Colombia). Administré el front de las 3 plataformas web del cliente con cambios del día a día. Lore only — sin demo pública.",
+      en: "At Infinity Tech: loyalty/points system (Puntos Colombia–style). Owned day-to-day front work across the client's 3 web platforms. Lore only — no public demo.",
+    },
+    category: "experiencia",
+    presentation: "lore",
+    featured: false,
+    year: "2022–2024",
+    role: {
+      es: "Frontend / fullstack en agency",
+      en: "Frontend / fullstack in agency",
+    },
+    stack: ["Next.js", "React", "Flask", "Prisma", "AWS", "Vercel"],
+    problem: {
+      es: "El cliente necesitaba operar fidelización y administración web de forma continua, no un one-off.",
+      en: "The client needed ongoing loyalty ops and web admin — not a one-off.",
+    },
+    decisions: [
+      {
+        es: "Ownership del front en las tres superficies web del cliente",
+        en: "Front ownership across the client's three web surfaces",
+      },
+      {
+        es: "Entrega incremental de cambios diarios sobre un producto vivo",
+        en: "Incremental day-to-day changes on a live product",
+      },
+    ],
+    outcome: {
+      es: "Producto aún en producción años después. Caso lore de agency sin código de cliente.",
+      en: "Product still in production years later. Agency lore case without client code.",
+    },
+    companyId: "infinity-tech",
+    disclaimer: {
+      es: "Narrativa profesional. Código y datos del cliente no se publican.",
+      en: "Professional narrative. Client code and data are not published.",
+    },
+  },
+  {
+    slug: "infinity-pos",
+    title: "POS Commodo",
+    tagline: {
+      es: "POS desde cero en ~1 mes — multi-API",
+      en: "POS from scratch in ~1 month — multi-API",
+    },
+    summary: {
+      es: "Punto de venta construido desde cero en aproximadamente un mes para el ecosistema Commodo: APIs propias, Siigo y consultas externas (p. ej. departamentos). Lore only.",
+      en: "Point-of-sale built from scratch in about a month for the Commodo ecosystem: own APIs, Siigo, and external lookups (e.g. departments). Lore only.",
+    },
+    category: "experiencia",
+    presentation: "lore",
+    featured: false,
+    year: "2022–2024",
+    role: {
+      es: "Fullstack — integraciones POS",
+      en: "Fullstack — POS integrations",
+    },
+    stack: ["APIs", "Siigo", "Commodo", "Fullstack"],
+    problem: {
+      es: "Operación en mostrador necesitaba un POS conectado a fidelización, facturación y catálogos geográficos.",
+      en: "Counter ops needed a POS wired to loyalty, invoicing, and geo catalogs.",
+    },
+    decisions: [
+      {
+        es: "Integrar APIs propias + Siigo + lookups externos en un solo flujo de caja",
+        en: "Integrate own APIs + Siigo + external lookups in one checkout flow",
+      },
+      {
+        es: "Scope cerrado a ~1 mes desde cero",
+        en: "Scoped to ~1 month from zero",
+      },
+    ],
+    outcome: {
+      es: "POS entregado en ~1 mes. Lore de integraciones sin publicar endpoints de cliente.",
+      en: "POS delivered in ~1 month. Integration lore without publishing client endpoints.",
+    },
+    companyId: "infinity-tech",
+    disclaimer: {
+      es: "Narrativa profesional. Código y datos del cliente no se publican.",
+      en: "Professional narrative. Client code and data are not published.",
+    },
+  },
+  {
     slug: "miobox",
     title: "MIOBOX Bridge",
     tagline: {
@@ -475,8 +563,8 @@ export const projects: Project[] = [
       },
     ],
     outcome: {
-      es: "Case study de integraciones industriales sin exponer IP del cliente.",
-      en: "Industrial integration case study without exposing client IP.",
+      es: "Ciclo de actualización ERP reducido de ~40 min a ~2 min. Case study sin exponer IP del cliente.",
+      en: "ERP update cycle cut from ~40 min to ~2 min. Case study without exposing client IP.",
     },
     companyId: "sofinsas",
     disclaimer: {

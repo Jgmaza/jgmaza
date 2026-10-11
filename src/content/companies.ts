@@ -14,8 +14,8 @@ export const companies: Company[] = [
       en: "Fullstack / integrations — public sector",
     },
     summary: {
-      es: "Varias líneas en paralelo, no solo mapeo de actores: (1) Integrador de servicios — gateway APISIX + FastAPI/Vue para interoperabilidad VUT con ARGO, REDAM, RUES, VUCE/X-Road; (2) SIVEEIC — vigilancia energética (Angular + Node + SQL Server), con foco fuerte en dosimetría unificada across API/BD/front; (3) Taiga corporativo — customizaciones LDAP, filtros Kanban y alertas; (4) Mapeo de actores — FastAPI + React (matriz interés-poder). GitLab institucional bajo jgmaza@minenergia.gov.co.",
-      en: "Several parallel tracks, not only stakeholder mapping: (1) Service Integrator — APISIX gateway + FastAPI/Vue for VUT interoperability with ARGO, REDAM, RUES, VUCE/X-Road; (2) SIVEEIC — energy surveillance (Angular + Node + SQL Server), with a strong focus on unified dosimetry across API/DB/front; (3) Corporate Taiga — LDAP, Kanban filters, and due-date alerts; (4) Stakeholder mapping — FastAPI + React. Institutional GitLab under jgmaza@minenergia.gov.co.",
+      es: "Varias líneas en paralelo: (1) Integrador — gateway APISIX + FastAPI/Vue; superficie de interoperabilidad ampliada de 2 a 6 rutas/familias (nombres no públicos en CV); (2) SIVEEIC — dosimetría unificada (~629k HIST + ~61k NUEVO en pruebas) con CLI de repair/sync; (3) Taiga corporativo — LDAP, Kanban, alertas; (4) Mapeo de actores — FastAPI + React. Ritmo de cierre de entregas acelerado vs. el retraso previo del área.",
+      en: "Several parallel tracks: (1) Integrator — APISIX + FastAPI/Vue gateway; interoperability surface grown from 2 to 6 route/families (names not listed on the CV); (2) SIVEEIC — unified dosimetry (~629k HIST + ~61k NUEVO in tests) with repair/sync CLI; (3) Corporate Taiga — LDAP, Kanban, alerts; (4) Stakeholder mapping — FastAPI + React. Delivery closure accelerated vs. prior area delays.",
     },
     status: "ongoing",
     stack: [
@@ -52,15 +52,15 @@ export const companies: Company[] = [
       en: "Fullstack — internal tools",
     },
     summary: {
-      es: "Apoyo a proyectos de clientes internacionales y a un producto nuevo con front, back y conceptos de AI. Tools internas: convertir necesidades concretas en interfaces que hablan con datos y procesos — Next y Supabase de UI a capa de datos. Narrativa profesional sin acceso al código del cliente.",
-      en: "Supported international client work and a new product spanning front, back, and AI concepts. Internal tools: turn concrete needs into interfaces that talk to product data — Next and Supabase from UI to data. Professional narrative only; no client code access.",
+      es: "Apoyo a clientes internacionales y a un producto nuevo (front, back e IA). Al entrar, el equipo aceleró entregas y se puso al día con el cronograma; en el track visual/front mantuve las tareas de UI al corriente (Next + Supabase). Lore only — sin código de cliente.",
+      en: "Supported international clients and a new product (front, back, AI). After joining, delivery accelerated and the schedule caught up; on the visual/front track I kept UI tasks current (Next + Supabase). Lore only — no client code.",
     },
     status: "cleared",
     stack: ["Next.js", "Supabase", "TypeScript", "AI concepts"],
     projectSlugs: [],
     note: {
-      es: "Lore only — sin demo pública ni repositorio de cliente.",
-      en: "Lore only — no public demo or client repository.",
+      es: "Lore only — sin demo pública ni repositorio de cliente. Contexto de no-renovación omitido en CV.",
+      en: "Lore only — no public demo or client repository. Non-renewal context omitted from the CV.",
     },
   },
   {
@@ -75,8 +75,8 @@ export const companies: Company[] = [
       en: "AI automation / assistants",
     },
     summary: {
-      es: "Automatización con AI y asistentes virtuales a medida: OpenAI, n8n, FastAPI y Python. Fine-tuning y prompts estructurados, integración de APIs externas y pipelines de automatización. El objetivo no era solo un chat — era poner un agente a trabajar dentro de un flujo real.",
-      en: "AI-driven automation and custom virtual assistants: OpenAI, n8n, FastAPI, and Python. Fine-tuning, structured prompts, external APIs, and automation pipelines. The goal wasn't just a chat — it was putting an agent to work inside a real workflow.",
+      es: "Automatización con AI y asistentes a medida (OpenAI, n8n, FastAPI, Python) dentro de flujos reales de ventas/ops. Workflows de agente que redujeron la operación humana de ~7 a ~2 personas al gestionar el ciclo de ventas. Sin publicar el proyecto fallido ni métricas de dashboard no recordadas.",
+      en: "AI automation and custom assistants (OpenAI, n8n, FastAPI, Python) inside real sales/ops workflows. Agent workflows that cut human ops from ~7 to ~2 people by owning the sales cycle. Failed flagship and unrecalled dashboard metrics are not published.",
     },
     status: "cleared",
     stack: ["OpenAI", "n8n", "FastAPI", "Python"],
@@ -140,15 +140,15 @@ export const companies: Company[] = [
       en: "Fullstack engineer",
     },
     summary: {
-      es: "Años construyendo y manteniendo apps fullstack con Next.js, Flask y Prisma — front y back, deploy en AWS y Vercel. Modelado de datos, documentación de requerimientos, UIs responsive y flujo Git para calidad en proyectos complejos.",
-      en: "Years building and maintaining fullstack apps with Next.js, Flask, and Prisma — front and back, deployed on AWS and Vercel. Data modeling, requirements docs, responsive UIs, and Git-based quality across complex work.",
+      es: "Agency fullstack (Next.js, Flask, Prisma, AWS/Vercel). Pieza central: Commodo — fidelización tipo puntos que sigue viva; front en las 3 plataformas web del cliente. También un POS desde cero (~1 mes) con APIs Commodo, Siigo y consultas externas. Al inicio aprendí React en días para desbloquear un proyecto lento del equipo.",
+      en: "Agency fullstack (Next.js, Flask, Prisma, AWS/Vercel). Core piece: Commodo — points-style loyalty still live; front across the client's 3 web platforms. Also a POS from scratch (~1 month) with Commodo, Siigo, and external lookup APIs. Early on, learned React in days to unblock a slow team project.",
     },
     status: "cleared",
-    stack: ["Next.js", "Flask", "Prisma", "AWS", "Vercel"],
-    projectSlugs: [],
+    stack: ["Next.js", "Flask", "Prisma", "AWS", "Vercel", "Siigo"],
+    projectSlugs: ["commodo", "infinity-pos"],
     note: {
-      es: "Lore agregado de agency — sin demos de clientes.",
-      en: "Agency lore aggregate — no client demos.",
+      es: "Lore de agency — sin demos públicas de cliente.",
+      en: "Agency lore — no public client demos.",
     },
   },
   {
@@ -197,8 +197,8 @@ export const companies: Company[] = [
           en: "MIOBOX Bridge · ERP ↔ plant",
         },
         summary: {
-          es: "Puente NestJS: SOAP/ERP ↔ órdenes ↔ cierre OP/consumo/entrega. El reto es entender qué necesita cada lado cuando los sistemas no hablan el mismo idioma.",
-          en: "NestJS bridge: SOAP/ERP ↔ orders ↔ operational close/consumption/delivery. The hard part is what each side needs when systems don't share a language.",
+          es: "Puente NestJS: SOAP/ERP ↔ órdenes ↔ cierre OP/consumo/entrega. Redujo el ciclo de actualización en el ERP de ~40 min a ~2 min.",
+          en: "NestJS bridge: SOAP/ERP ↔ orders ↔ operational close/consumption/delivery. Cut the ERP update cycle from ~40 min to ~2 min.",
         },
         stack: ["NestJS", "SOAP", "REST", "TypeScript"],
       },

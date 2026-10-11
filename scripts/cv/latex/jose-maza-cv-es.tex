@@ -1,0 +1,178 @@
+% José Gabriel Maza Mendoza — CV (ES)
+% Plantilla inspirada en layout LaTeX de referencia (Tony Gualdrón)
+\documentclass[10.5pt,a4paper]{article}
+
+\usepackage[margin=1.55cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\definecolor{ink}{HTML}{111111}
+\definecolor{muted}{HTML}{333333}
+\definecolor{sectionline}{HTML}{222222}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=ink,
+  pdfauthor={José Gabriel Maza Mendoza},
+  pdftitle={José Gabriel Maza Mendoza — CV}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+\setlist[itemize]{leftmargin=1.15em, itemsep=0.12em, topsep=0.2em, parsep=0pt}
+\setstretch{1.08}
+
+\titleformat{\section}
+  {\normalsize\bfseries\sffamily}
+  {}{0pt}{\MakeUppercase}[\vspace{-0.35em}{\color{sectionline}\titlerule[0.7pt]}\vspace{0.35em}]
+\titlespacing*{\section}{0pt}{0.85em}{0.35em}
+
+\newcommand{\Job}[4]{%
+  \noindent\textbf{#1}\hfill {\small #3}\\[-0.05em]
+  \textit{#2}\hfill {\small\color{muted}#4}\\[0.15em]
+}
+
+\newcommand{\Edu}[4]{%
+  \noindent\textbf{#1}\hfill {\small #3}\\[-0.05em]
+  \textit{#2}\hfill {\small\color{muted}#4}\\[0.25em]
+}
+
+\newcommand{\Award}[4]{%
+  \noindent\textbf{#1}\hfill {\small #3}\\[-0.05em]
+  \textit{#2}\\[0.05em]
+  {\small #4}\\[0.35em]
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries José Gabriel Maza Mendoza}\\[0.25em]
+  {\large\textit{Ingeniero de Sistemas · Fullstack / Product Engineer}}\\[0.45em]
+  {\small
+    \faEnvelope\ \href{mailto:mazamendoza123@gmail.com}{mazamendoza123@gmail.com}
+    \quad \faPhone\ (+57) 300 8420902
+    \quad \faMapMarker*\ Barranquilla, Colombia
+  }\\[0.15em]
+  {\small
+    \faGithub\ \href{https://github.com/Jgmaza}{github.com/Jgmaza}
+    \quad \faGlobe\ \href{https://jgmaza.vercel.app}{jgmaza.vercel.app}
+  }
+\end{center}
+
+\section{Perfil profesional}
+Ingeniero de Sistemas y desarrollador fullstack con enfoque en product engineering.
+Conecto interfaces, APIs, datos e infraestructura para llevar soluciones desde la
+definición del problema hasta el despliegue. Experiencia en desarrollo web,
+integraciones entre sistemas, herramientas internas y asistentes de IA, usando
+React, Next.js, TypeScript, NestJS, FastAPI y Supabase según las necesidades de
+cada proyecto. Cómodo con el ciclo completo: diseño, implementación, calidad y deploy.
+
+\section{Experiencia laboral}
+
+\Job{Desarrollador Fullstack}{Ministerio de Minas y Energía}{Sep 2025 -- presente}{Barranquilla, Colombia}
+Responsabilidades: desarrollo y mantenimiento en paralelo de varias líneas productivas
+institucionales --- integrador de servicios / gateway de interoperabilidad, plataforma
+de vigilancia energética (dosimetría) y aplicación de mapeo de stakeholders --- con foco
+en APIs confiables, consistencia de datos y frontends usables bajo restricciones
+institucionales.
+\begin{itemize}
+  \item Expandí las interoperabilidades del integrador de \textbf{2 a 6} rutas/familias
+        de integración sobre un gateway HTTP (APISIX + FastAPI + Vue).
+  \item Unifiqué dosimetría end-to-end (API Node, SQL Server, Angular) sobre volúmenes
+        de prueba del orden de \textbf{$\sim$629k} registros históricos y
+        \textbf{$\sim$61k} nuevos; CLI/scripts de repair recuperaron y sincronizaron
+        datos históricos hacia la capa unificada.
+  \item Aceleré el cierre de entregas frente al ritmo previo reportado por el área
+        (el trabajo venía retrasado con el desarrollador anterior), sosteniendo varias
+        HU en paralelo con despliegues documentados a QA.
+\end{itemize}
+
+\vspace{0.35em}
+\Job{Desarrollador Fullstack}{Guarapo Labs}{Jun 2025 -- Ago 2025}{Barranquilla, Colombia}
+Apoyé entregas a cliente internacional y un producto nuevo (front, back e IA).
+Construí herramientas internas con Next.js y Supabase.
+\begin{itemize}
+  \item Al incorporar me, aceleramos entregas y nos pusimos al día con el cronograma;
+        en el frente visual mantuve las tareas de UI al corriente.
+\end{itemize}
+
+\vspace{0.35em}
+\Job{Desarrollador Fullstack · IA / automatización}{Clazz Dev}{Feb 2025 -- May 2025}{Barranquilla, Colombia}
+Diseñé automatizaciones e asistentes con OpenAI, n8n, FastAPI y Python --- agentes
+dentro de flujos reales (ventas y operaciones), no solo chat.
+\begin{itemize}
+  \item Workflows de agente de ventas que redujeron la operación humana de aproximadamente
+        \textbf{7 a 2 personas}, al gestionar el ciclo de ventas de punta a punta.
+\end{itemize}
+
+\vspace{0.35em}
+\Job{Desarrollador Fullstack}{I-Cluster}{Jun 2024 -- Ene 2025}{Barranquilla, Colombia}
+Desarrollé software para una iniciativa municipal de salud emocional (Tolú) con React
+y Express. Colaboración transversal en features orientadas a programas de bienestar,
+con énfasis en fiabilidad y entrega mantenible.
+
+\vspace{0.35em}
+\Job{Desarrollador Fullstack}{Infinity Tech Consulting}{Abr 2022 -- Jun 2024}{Barranquilla, Colombia}
+Construí y mantuve aplicaciones web fullstack con Next.js, Flask y Prisma --- frontend
+y backend --- desplegadas en AWS y Vercel.
+\begin{itemize}
+  \item \textbf{Commodo}: sistema de fidelización (estilo puntos) que sigue en producción;
+        administré el front de las \textbf{3 plataformas web} del cliente con cambios
+        del día a día.
+  \item POS desde cero en $\approx$\textbf{1 mes}, integrando APIs propias de Commodo,
+        Siigo y consultas externas (p.\ ej.\ departamentos).
+\end{itemize}
+
+\vspace{0.35em}
+\Job{Soporte / Freelance (MIOBOX)}{Sofin SAS}{Nov 2021 -- Ene 2022; freelance $\approx$2 meses en 2026}{Barranquilla, Colombia}
+Capítulo inicial: soporte de facturación electrónica y pruebas de código ERP.
+Retorno freelance: puente NestJS SOAP/REST entre ERP y operaciones de planta
+(órdenes, consumo, cierre de entrega).
+\begin{itemize}
+  \item Reduje el ciclo de actualización en el ERP de aproximadamente
+        \textbf{40 minutos a $\sim$2 minutos} mediante el puente de integración.
+\end{itemize}
+
+\section{Educación formal}
+\Edu{Ingeniero de Sistemas}{Universidad del Norte}{2018 -- 2022}{Barranquilla, Colombia}
+Distinción: Estudiante Destacado.
+
+\section{Habilidades}
+\textbf{Core:} TypeScript, React, JavaScript, Java, Python, NestJS, FastAPI, Node/Express,
+REST APIs, SQL (MySQL, PostgreSQL, SQL Server), Git.\\
+\textbf{También en producción:} Next.js, Vue 3, Angular, Prisma, Supabase, AWS, Vercel,
+APISIX / API gateways, integraciones SOAP, n8n, HTML/CSS/Tailwind, Linux.
+
+\section{Reconocimientos y premios}
+\Award{1.\textsuperscript{er} puesto --- Interledger Hackathon}{Ledger One}{2026}{%
+  Primer puesto con Ledger One, proyecto de equipo sobre open payments / Interledger.}
+\Award{Mejor proyecto con ShadAI · 4.\textsuperscript{o} lugar general}{BarranquillIA 2025 · EduNova}{2025}{%
+  Premio a mejor proyecto usando ShadAI (tecnología USA) y 4.\textsuperscript{o} lugar
+  general. Plataforma educativa en reconstrucción de producto.}
+
+\section{Idiomas}
+Inglés --- EF SET B2 \quad|\quad Español --- Nativo
+
+\section{Certificaciones y cursos}
+\begin{itemize}
+  \item \textbf{Blockchain Builders 101} --- Ruta N / Stellar Development Foundation / BAF
+        (en curso; bootcamp 5 semanas, MVP sobre Stellar).
+  \item Certificate of Participation --- ``Build with AI'', Google Developers Group
+        Barranquilla · 2025.
+  \item React Query --- DevTalles · 12/2023; HTML5 y CSS3 --- Udemy · 07/2018.
+\end{itemize}
+
+\vspace{0.6em}
+{\footnotesize\color{muted}Última actualización: octubre 2026}
+
+\end{document}
