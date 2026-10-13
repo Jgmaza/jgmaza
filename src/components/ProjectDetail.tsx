@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { DemoPreview } from "@/components/DemoPreview";
 import { Reveal } from "@/components/Reveal";
 import { PresentationBadge } from "@/components/PresentationBadge";
 import { getCompany } from "@/content/companies";
@@ -69,18 +69,9 @@ export function ProjectDetail({ project }: { project: Project }) {
         ) : null}
       </Reveal>
 
-      {project.preview ? (
-        <Reveal delay={60} className="mt-12">
-          <div className="relative aspect-[16/10] overflow-hidden border border-line bg-bg-deep">
-            <Image
-              src={project.preview}
-              alt={project.title}
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 1100px) 100vw, 1100px"
-              priority
-            />
-          </div>
+      {project.preview || project.demoUrl || project.repoUrl ? (
+        <Reveal delay={60} className="mt-12 max-w-3xl">
+          <DemoPreview project={project} />
         </Reveal>
       ) : null}
 

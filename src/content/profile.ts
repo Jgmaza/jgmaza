@@ -92,6 +92,9 @@ export const uiCopy: Record<
       source: string;
       back: string;
       related: string;
+      previewDemo: string;
+      previewSource: string;
+      previewLore: string;
     };
     about: {
       title: string;
@@ -148,6 +151,9 @@ export const uiCopy: Record<
       source: "Código",
       back: "← Proyectos",
       related: "Empresa",
+      previewDemo: "DEMO",
+      previewSource: "SOURCE · github",
+      previewLore: "LORE · sin demo pública",
     },
     about: {
       title: "Sobre mí",
@@ -203,6 +209,9 @@ export const uiCopy: Record<
       source: "Source",
       back: "← Projects",
       related: "Company",
+      previewDemo: "DEMO",
+      previewSource: "SOURCE · github",
+      previewLore: "LORE · no public demo",
     },
     about: {
       title: "About",
