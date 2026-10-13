@@ -14,8 +14,8 @@ export const companies: Company[] = [
       en: "Fullstack / integrations — public sector",
     },
     summary: {
-      es: "Varias líneas en paralelo: (1) Integrador — gateway APISIX + FastAPI/Vue; superficie de interoperabilidad ampliada de 2 a 6 rutas/familias (nombres no públicos en CV); (2) SIVEEIC — dosimetría unificada (~629k HIST + ~61k NUEVO en pruebas) con CLI de repair/sync; (3) Taiga corporativo — LDAP, Kanban, alertas; (4) Mapeo de actores — FastAPI + React. Ritmo de cierre de entregas acelerado vs. el retraso previo del área.",
-      en: "Several parallel tracks: (1) Integrator — APISIX + FastAPI/Vue gateway; interoperability surface grown from 2 to 6 route/families (names not listed on the CV); (2) SIVEEIC — unified dosimetry (~629k HIST + ~61k NUEVO in tests) with repair/sync CLI; (3) Corporate Taiga — LDAP, Kanban, alerts; (4) Stakeholder mapping — FastAPI + React. Delivery closure accelerated vs. prior area delays.",
+      es: "Varias líneas en paralelo: (1) Integrador — gateway APISIX + FastAPI/Vue; superficie de interoperabilidad ampliada de 2 a 6 rutas/familias (nombres no públicos en CV); (2) SIVEEIC — dosimetría unificada (~629k HIST + ~61k NUEVO en pruebas) con CLI de repair/sync; (3) Taiga open source modificado — LDAP, Kanban, alertas; (4) Mapeo de actores — FastAPI + React. Ritmo de cierre de entregas acelerado vs. el retraso previo del área.",
+      en: "Several parallel tracks: (1) Integrator — APISIX + FastAPI/Vue gateway; interoperability surface grown from 2 to 6 route/families (names not listed on the CV); (2) SIVEEIC — unified dosimetry (~629k HIST + ~61k NUEVO in tests) with repair/sync CLI; (3) Modified open-source Taiga — LDAP, Kanban, alerts; (4) Stakeholder mapping — FastAPI + React. Delivery closure accelerated vs. prior area delays.",
     },
     status: "ongoing",
     stack: [
@@ -36,8 +36,8 @@ export const companies: Company[] = [
       "stakeholder-matrix",
     ],
     note: {
-      es: "Código e IPs institucionales no se publican. Demos sanitizadas: Integrador, SIVEEIC (Dose Ledger) y Stakeholder Matrix. Taiga sigue como lore.",
-      en: "Institutional code and IPs are not published. Sanitized demos: Integrator, SIVEEIC (Dose Ledger), and Stakeholder Matrix. Taiga remains lore.",
+      es: "Código e IPs institucionales no se publican. Demos sanitizadas: Integrador, SIVEEIC y Stakeholder Matrix. Taiga es lore: open source modificado (sin demo pública).",
+      en: "Institutional code and IPs are not published. Sanitized demos: Integrator, SIVEEIC, and Stakeholder Matrix. Taiga is lore: modified open source (no public demo).",
     },
   },
   {
