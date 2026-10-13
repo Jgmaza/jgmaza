@@ -83,12 +83,12 @@ export const projects: Project[] = [
     slug: "siveeic",
     title: "SIVEEIC",
     tagline: {
-      es: "Carga dosimétrica por Excel y ledger unificado",
-      en: "Excel dosimetry mass load and unified ledger",
+      es: "Módulo de reportes dosimetría (consulta multi-filtro)",
+      en: "Dosimetry reports module (multi-filter consult)",
     },
     summary: {
-      es: "Ecosistema multi-repo (Angular, api_siveeic, SQL Server). Pieza central: carga masiva por Excel (validar → errores → guardar) hacia dosimetría unificada — SPs, dual-write, flags NR/NP y Consultar. La demo sanitizada replica ese flujo de UI Angular + ledger con datos ficticios.",
-      en: "Multi-repo ecosystem (Angular, api_siveeic, SQL Server). Core piece: Excel mass load (validate → errors → save) into unified dosimetry — SPs, dual-write, NR/NP flags, and Consultar. The sanitized demo mirrors that Angular upload flow plus ledger with fictional data.",
+      es: "Ecosistema multi-repo (Angular, api_siveeic, SQL Server). Pieza central para el portafolio: el módulo de reportes dosimetría — filtros por operador/periodo/documento, tabla paginada y vistas de historial/unificado. La demo es copia sanitizada del front Angular real (sin login ni branding institucional) con API mock.",
+      en: "Multi-repo ecosystem (Angular, api_siveeic, SQL Server). Portfolio focus: the dosimetry reports module — operator/period/document filters, paginated table, and historic/unified views. The demo is a sanitized copy of the real Angular front (no login or institutional branding) with a mock API.",
     },
     category: "experiencia",
     presentation: "demo",
@@ -98,35 +98,35 @@ export const projects: Project[] = [
       es: "Fullstack — API Node, BD SQL Server y front Angular",
       en: "Fullstack — Node API, SQL Server DB, and Angular front",
     },
-    stack: ["Angular", "Node.js", "Express", "SQL Server", "Docker", "MSW", "React"],
+    stack: ["Angular", "Node.js", "Express", "SQL Server", "Docker"],
     problem: {
       es: "Reportes históricos y nuevos convivían con contratos distintos; hacía falta un Consultar unificado sin romper legado ni falsear NR/NP como ceros.",
       en: "Historical and new reports lived under different contracts; a unified Consultar was needed without breaking legacy or coercing NR/NP into zeros.",
     },
     decisions: [
       {
-        es: "Flujo Excel: validararchivodosimetria → masivodosimetria con archivo de errores",
-        en: "Excel flow: validate file → mass commit with downloadable error report",
+        es: "Conservar la UI Angular real de reportes/dosimetría (sin rediseño)",
+        en: "Keep the real Angular reports/dosimetry UI (no redesign)",
       },
       {
         es: "Unificar en BD (SPs + dual-write) y Consultar multi-filtro en UI",
         en: "Unify in DB (SPs + dual-write) and multi-filter Consultar in the UI",
       },
       {
-        es: "Demo pública mock que replica la pantalla de carga Angular + ledger",
-        en: "Public mock demo that mirrors the Angular upload screen + ledger",
+        es: "Demo pública con interceptor mock y datos ficticios",
+        en: "Public demo with mock interceptor and fictional data",
       },
     ],
     outcome: {
-      es: "Demo en Vercel centrada en carga Excel. Trabajo real entregado across front/API/DB (lore institucional, sin código público).",
-      en: "Vercel demo centered on Excel upload. Real delivery across front/API/DB (institutional lore, no public code).",
+      es: "Demo en Vercel centrada en reportes dosimetría. Trabajo real entregado across front/API/DB (lore institucional, sin código público).",
+      en: "Vercel demo centered on dosimetry reports. Real delivery across front/API/DB (institutional lore, no public code).",
     },
     companyId: "ministerio-minas",
     demoUrl: "https://siveeic-dosimetry-demo.vercel.app",
     repoUrl: "https://github.com/Jgmaza/siveeic-dosimetry-demo",
     disclaimer: {
-      es: "Demo de portafolio inspirada en la UI de carga dosimétrica de SIVEEIC. Trabajadores y empresas ficticios. Sin hosts institucionales ni datos reales.",
-      en: "Portfolio demo inspired by SIVEEIC dosimetry upload UI. Fictional workers and companies. No institutional hosts or real data.",
+      es: "Demo de portafolio inspirada en la UI de reportes dosimetría de SIVEEIC. Trabajadores y empresas ficticios. Sin hosts institucionales ni datos reales.",
+      en: "Portfolio demo inspired by SIVEEIC dosimetry reports UI. Fictional workers and companies. No institutional hosts or real data.",
     },
   },
   {
