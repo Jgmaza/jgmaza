@@ -273,8 +273,10 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  opacity: 0.72;
-  filter: saturate(0.92) contrast(1.02);
+  opacity: 0.78;
+  /* Soft blur so UI shape reads without exposing mock/table detail */
+  filter: blur(6px) saturate(0.9) contrast(1.02);
+  transform: scale(1.04);
   transition:
     opacity 0.25s ease,
     filter 0.25s ease,
@@ -283,9 +285,9 @@ a {
 
 .demo-preview-wrap:hover .demo-preview__shot,
 .demo-preview-link:focus-visible .demo-preview__shot {
-  opacity: 1;
-  filter: saturate(1.05) contrast(1.04);
-  transform: scale(1.03);
+  opacity: 0.92;
+  filter: blur(3.5px) saturate(1.02) contrast(1.03);
+  transform: scale(1.06);
 }
 
 .demo-preview__veil {

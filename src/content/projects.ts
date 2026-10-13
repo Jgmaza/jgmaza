@@ -74,6 +74,7 @@ export const projects: Project[] = [
     companyId: "ministerio-minas",
     demoUrl: "https://integrador-gateway-demo.vercel.app",
     repoUrl: "https://github.com/Jgmaza/integrador-gateway-demo",
+    preview: "/previews/integrador-gateway.png",
     disclaimer: {
       es: "Demo de portafolio inspirada en trabajo de interoperabilidad. Sistemas ficticios (DocketOS, CivicHub, TradeDesk, FirmBook). Sin afiliación, endpoints ni credenciales reales.",
       en: "Portfolio demo inspired by interoperability work. Fictional systems (DocketOS, CivicHub, TradeDesk, FirmBook). No real affiliation, endpoints, or credentials.",
@@ -124,6 +125,7 @@ export const projects: Project[] = [
     companyId: "ministerio-minas",
     demoUrl: "https://siveeic-dosimetry-demo.vercel.app",
     repoUrl: "https://github.com/Jgmaza/siveeic-dosimetry-demo",
+    preview: "/previews/siveeic-dosimetry.png",
     disclaimer: {
       es: "Demo de portafolio inspirada en la UI de reportes dosimetría de SIVEEIC. Trabajadores y empresas ficticios. Sin hosts institucionales ni datos reales.",
       en: "Portfolio demo inspired by SIVEEIC dosimetry reports UI. Fictional workers and companies. No institutional hosts or real data.",
