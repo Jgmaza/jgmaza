@@ -6,8 +6,9 @@ export const GITHUB_URL = "https://github.com/Jgmaza";
 export const CV_PATH = "/jose-maza-cv.pdf";
 
 export const skills: Skill[] = [
-  { label: "Next / React", ticks: 5, tier: "CORE" },
+  { label: "Next.js", ticks: 5, tier: "CORE" },
   { label: "TypeScript", ticks: 5, tier: "CORE" },
+  { label: "React", ticks: 4, tier: "STRONG" },
   { label: "NestJS", ticks: 4, tier: "STRONG" },
   { label: "FastAPI", ticks: 3, tier: "STRONG" },
   { label: "Supabase", ticks: 3, tier: "STRONG" },
@@ -36,8 +37,8 @@ export const profile = {
     en: "Professional work, own products, and hackathons — with live demos when possible and clear narrative when not.",
   } satisfies LocalizedString,
   about: {
-    es: "Soy José Gabriel Maza Mendoza, desarrollador fullstack con enfoque en product engineering. Trabajo conectando interfaces, APIs, datos e infraestructura para llevar soluciones desde la definición del problema hasta el despliegue. Mi experiencia abarca desarrollo web, integraciones entre sistemas, herramientas internas y asistentes de IA. Utilizo React, Next.js, TypeScript, NestJS, FastAPI y Supabase según las necesidades de cada proyecto. Aquí reúno experiencias profesionales, productos propios y hackathons (EduNova y Ledger One con reconocimiento; BioAlert+ y MediAgent como participación). Prefiero demos honestas, case studies sanitizados y lore cuando el código del cliente no se puede mostrar. Fuera del editor: música, gym y ajedrez.",
-    en: "I'm José Gabriel Maza Mendoza, a full-stack developer focused on product engineering. I connect interfaces, APIs, data, and infrastructure to take solutions from problem definition to deployment. My experience spans web development, system integrations, internal tools, and AI assistants. I work with React, Next.js, TypeScript, NestJS, FastAPI, and Supabase based on each project's needs. This site brings together professional work, own products, and hackathons (EduNova and Ledger One with awards; BioAlert+ and MediAgent as participation). I prefer honest demos, sanitized case studies, and lore when client code can't be shown. Outside the editor: music, gym, and chess.",
+    es: "Soy José Gabriel Maza Mendoza, desarrollador fullstack con enfoque en product engineering. Trabajo conectando interfaces, APIs, datos e infraestructura para llevar soluciones desde la definición del problema hasta el despliegue. Mi experiencia abarca desarrollo web, integraciones entre sistemas, herramientas internas y asistentes de IA. Mi stack frontend principal es Next.js (más fuerte que React solo), junto con TypeScript, NestJS, FastAPI y Supabase según el proyecto. Aquí reúno experiencias profesionales, productos propios y hackathons (EduNova y Ledger One con reconocimiento; BioAlert+ y MediAgent como participación). Prefiero demos honestas, case studies sanitizados y lore cuando el código del cliente no se puede mostrar. Fuera del editor: música, gym y ajedrez.",
+    en: "I'm José Gabriel Maza Mendoza, a full-stack developer focused on product engineering. I connect interfaces, APIs, data, and infrastructure to take solutions from problem definition to deployment. My experience spans web development, system integrations, internal tools, and AI assistants. My primary frontend stack is Next.js (stronger than React alone), alongside TypeScript, NestJS, FastAPI, and Supabase depending on the project. This site brings together professional work, own products, and hackathons (EduNova and Ledger One with awards; BioAlert+ and MediAgent as participation). I prefer honest demos, sanitized case studies, and lore when client code can't be shown. Outside the editor: music, gym, and chess.",
   } satisfies LocalizedString,
   links: {
     github: GITHUB_URL,
@@ -99,6 +100,18 @@ export const uiCopy: Record<
     about: {
       title: string;
       skills: string;
+      skillsExpand: string;
+      skillsExpandEyebrow: string;
+      skillsExpandTitle: string;
+      skillsExpandIntro: string;
+      skillsClose: string;
+      skillsCount: string;
+      skillsEstimateNote: string;
+      skillsProject: string;
+      skillsProjects: string;
+      skillsRepo: string;
+      skillsRepos: string;
+      skillsViaCompanies: string;
       retro: string;
       retroHint: string;
     };
@@ -158,6 +171,19 @@ export const uiCopy: Record<
     about: {
       title: "Sobre mí",
       skills: "Stack",
+      skillsExpand: "Ampliar skills",
+      skillsExpandEyebrow: "Experiencia estimada",
+      skillsExpandTitle: "Skills que he tocado",
+      skillsExpandIntro:
+        "Agregado desde proyectos, repos públicos y stacks de experiencia laboral. Los años son una estimación a partir de fechas y número de piezas — no un CV certificador.",
+      skillsClose: "Cerrar",
+      skillsCount: "tecnologías",
+      skillsEstimateNote: "Estimación · proyectos + empresas",
+      skillsProject: "proyecto",
+      skillsProjects: "proyectos",
+      skillsRepo: "repo",
+      skillsRepos: "repos",
+      skillsViaCompanies: "Vía experiencia en",
       retro: "Retro portfolio",
       retroHint: "Versión interactiva / game del catálogo.",
     },
@@ -216,6 +242,19 @@ export const uiCopy: Record<
     about: {
       title: "About",
       skills: "Stack",
+      skillsExpand: "Expand skills",
+      skillsExpandEyebrow: "Estimated experience",
+      skillsExpandTitle: "Skills I've touched",
+      skillsExpandIntro:
+        "Aggregated from projects, public repos, and work experience stacks. Years are an estimate from dates and piece count — not a certified resume claim.",
+      skillsClose: "Close",
+      skillsCount: "technologies",
+      skillsEstimateNote: "Estimate · projects + companies",
+      skillsProject: "project",
+      skillsProjects: "projects",
+      skillsRepo: "repo",
+      skillsRepos: "repos",
+      skillsViaCompanies: "Via experience at",
       retro: "Retro portfolio",
       retroHint: "Interactive / game version of the catalog.",
     },
