@@ -11,7 +11,7 @@ export default function WorkPage() {
     <section className="page-shell py-16 sm:py-20">
       <Reveal>
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
-          Work
+          {copy.nav.work}
         </p>
         <h1 className="mt-3 font-display text-4xl tracking-tight text-ink sm:text-5xl">
           {copy.work.title}

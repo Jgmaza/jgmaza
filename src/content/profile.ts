@@ -123,14 +123,14 @@ export const uiCopy: Record<
 > = {
   es: {
     nav: {
-      work: "Trabajo",
+      work: "Trayectoria",
       projects: "Proyectos",
       about: "Sobre mí",
       cv: "CV",
       github: "GitHub",
     },
     home: {
-      ctaWork: "Ver trabajo",
+      ctaWork: "Ver trayectoria",
       ctaProjects: "Proyectos",
       ctaAbout: "Ver mi perfil",
       ctaCv: "Descargar CV",
@@ -139,9 +139,9 @@ export const uiCopy: Record<
       portraitAlt: "Retrato de José Maza",
     },
     work: {
-      title: "Experiencia",
+      title: "Trayectoria",
       intro:
-        "Línea de tiempo laboral. Cada empresa puede abrir proyectos ligados, stack y contexto.",
+        "Línea de tiempo profesional. Cada empresa puede abrir proyectos ligados, stack y contexto.",
       ongoing: "Actual",
       cleared: "Completado",
       projects: "Proyectos",
@@ -194,14 +194,14 @@ export const uiCopy: Record<
   },
   en: {
     nav: {
-      work: "Work",
+      work: "Experience",
       projects: "Projects",
       about: "About",
       cv: "CV",
       github: "GitHub",
     },
     home: {
-      ctaWork: "View work",
+      ctaWork: "View experience",
       ctaProjects: "Projects",
       ctaAbout: "View my profile",
       ctaCv: "Download CV",

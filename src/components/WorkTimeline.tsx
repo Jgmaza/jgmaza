@@ -108,7 +108,7 @@ export function WorkTimeline() {
                           <li key={project.slug}>
                             <Link
                               href={`/projects/${project.slug}`}
-                              className="text-sm text-accent hover:underline"
+                              className="work-project-link"
                             >
                               {project.title} →
                             </Link>

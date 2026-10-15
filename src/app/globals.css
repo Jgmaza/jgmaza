@@ -118,6 +118,27 @@ a {
   text-underline-offset: 4px;
 }
 
+.work-project-link {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  margin-left: -0.35rem;
+  font-size: 0.875rem;
+  color: var(--accent);
+  transition:
+    color 0.18s ease,
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+.work-project-link:hover,
+.work-project-link:focus-visible {
+  background: #e8f1e9;
+  color: #1f5c3a;
+  outline: none;
+  transform: translateX(2px);
+}
+
 .timeline-node[data-open="true"] .timeline-dot {
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-soft);
