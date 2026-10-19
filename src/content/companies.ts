@@ -14,8 +14,8 @@ export const companies: Company[] = [
       en: "Fullstack / integrations — public sector",
     },
     summary: {
-      es: "Varias líneas en paralelo: (1) Integrador — gateway APISIX + FastAPI/Vue; superficie de interoperabilidad ampliada de 2 a 6 rutas/familias (nombres no públicos en CV); (2) SIVEEIC — dosimetría unificada (~629k HIST + ~61k NUEVO en pruebas) con CLI de repair/sync; (3) Taiga open source modificado — LDAP, Kanban, alertas; (4) Mapeo de actores — FastAPI + React. Ritmo de cierre de entregas acelerado vs. el retraso previo del área.",
-      en: "Several parallel tracks: (1) Integrator — APISIX + FastAPI/Vue gateway; interoperability surface grown from 2 to 6 route/families (names not listed on the CV); (2) SIVEEIC — unified dosimetry (~629k HIST + ~61k NUEVO in tests) with repair/sync CLI; (3) Modified open-source Taiga — LDAP, Kanban, alerts; (4) Stakeholder mapping — FastAPI + React. Delivery closure accelerated vs. prior area delays.",
+      es: "Varias líneas en paralelo: (1) Integrador — gateway APISIX + FastAPI/Vue; superficie de interoperabilidad ampliada de 2 a 6 rutas/familias (nombres no públicos en CV); (2) SIVEEIC — dosimetría unificada (~629k HIST + ~61k NUEVO en pruebas) con CLI de repair/sync; (3) Taiga open source modificado — LDAP, Kanban, alertas; (4) Mapeo de actores — FastAPI + React. CI/CD a QA con Jenkins/Docker y guías de despliegue. Ritmo de cierre acelerado vs. el retraso previo del área.",
+      en: "Several parallel tracks: (1) Integrator — APISIX + FastAPI/Vue gateway; interoperability surface grown from 2 to 6 route/families (names not listed on the CV); (2) SIVEEIC — unified dosimetry (~629k HIST + ~61k NUEVO in tests) with repair/sync CLI; (3) Modified open-source Taiga — LDAP, Kanban, alerts; (4) Stakeholder mapping — FastAPI + React. CI/CD to QA with Jenkins/Docker and deploy guides. Delivery closure accelerated vs. prior area delays.",
     },
     status: "ongoing",
     stack: [
@@ -27,6 +27,9 @@ export const companies: Company[] = [
       "React",
       "SQL Server",
       "PostgreSQL",
+      "Docker",
+      "Jenkins",
+      "CI/CD",
       "Kubernetes",
     ],
     projectSlugs: [
@@ -163,11 +166,11 @@ export const companies: Company[] = [
       en: "Support → integrations / MIOBOX",
     },
     summary: {
-      es: "Primer clear corporativo y retorno freelance reciente bajo el mismo empleador. Del cuidado de facturación electrónica al puente NestJS entre ERP y planta (MIOBOX).",
-      en: "First corporate clear and a recent freelance return under the same employer. From electronic-invoicing support to a NestJS bridge between ERP and plant (MIOBOX).",
+      es: "Primer clear corporativo y retorno freelance reciente bajo el mismo empleador. Del cuidado de facturación electrónica a MIOBOX: modificar/extender código C#/.NET existente y puente NestJS SOAP/REST entre ERP y planta.",
+      en: "First corporate clear and a recent freelance return under the same employer. From electronic-invoicing support to MIOBOX: modify/extend existing C#/.NET and a NestJS SOAP/REST bridge between ERP and plant.",
     },
     status: "ongoing",
-    stack: ["NestJS", "SOAP", "REST", "ERP", "TypeScript"],
+    stack: ["C#", ".NET", "NestJS", "SOAP", "REST", "ERP", "TypeScript"],
     projectSlugs: ["miobox"],
     chapters: [
       {
@@ -197,10 +200,10 @@ export const companies: Company[] = [
           en: "MIOBOX Bridge · ERP ↔ plant",
         },
         summary: {
-          es: "Puente NestJS: SOAP/ERP ↔ órdenes ↔ cierre OP/consumo/entrega. Redujo el ciclo de actualización en el ERP de ~40 min a ~2 min.",
-          en: "NestJS bridge: SOAP/ERP ↔ orders ↔ operational close/consumption/delivery. Cut the ERP update cycle from ~40 min to ~2 min.",
+          es: "Código C#/.NET existente de MIOBOX modificado/extendido + puente NestJS SOAP/REST (ERP ↔ órdenes ↔ cierre OP/consumo/entrega). Ciclo de actualización ERP ~40 min → ~2 min (−95%).",
+          en: "Existing MIOBOX C#/.NET modified/extended + NestJS SOAP/REST bridge (ERP ↔ orders ↔ OP close/consumption/delivery). ERP update cycle ~40 min → ~2 min (−95%).",
         },
-        stack: ["NestJS", "SOAP", "REST", "TypeScript"],
+        stack: ["C#", ".NET", "NestJS", "SOAP", "REST", "TypeScript"],
       },
     ],
   },

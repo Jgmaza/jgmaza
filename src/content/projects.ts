@@ -538,30 +538,34 @@ export const projects: Project[] = [
     slug: "miobox",
     title: "MIOBOX Bridge",
     tagline: {
-      es: "Puente NestJS entre ERP, órdenes y cierre operativo",
-      en: "NestJS bridge between ERP, orders, and operational close",
+      es: "C#/.NET existente + puente NestJS ERP ↔ planta",
+      en: "Existing C#/.NET + NestJS ERP ↔ plant bridge",
     },
     summary: {
-      es: "Integración laboral: SOAP/ERP ↔ órdenes ↔ cierre OP/consumo/entrega. Solo narrativa — sin código de cliente.",
-      en: "Work integration: SOAP/ERP ↔ orders ↔ OP close/consumption/delivery. Narrative only — no client code.",
+      es: "Integración laboral: modificación/extensión del código C#/.NET original de MIOBOX más puente NestJS SOAP/REST (ERP ↔ órdenes ↔ cierre OP/consumo/entrega). Solo narrativa — sin código de cliente.",
+      en: "Work integration: modify/extend original MIOBOX C#/.NET plus NestJS SOAP/REST bridge (ERP ↔ orders ↔ OP close/consumption/delivery). Narrative only — no client code.",
     },
     category: "experiencia",
     presentation: "lore",
     featured: false,
     year: "2026",
     role: {
-      es: "Backend / integraciones",
-      en: "Backend / integrations",
+      es: "Backend / integraciones (C# + NestJS)",
+      en: "Backend / integrations (C# + NestJS)",
     },
-    stack: ["NestJS", "TypeScript", "SOAP", "REST"],
+    stack: ["C#", ".NET", "NestJS", "TypeScript", "SOAP", "REST"],
     problem: {
       es: "Sistemas de planta y ERP no hablan el mismo idioma; el cierre operativo se rompe en el medio.",
       en: "Plant systems and ERP don't share a language; operational close breaks in the middle.",
     },
     decisions: [
       {
-        es: "API puente con contratos claros por etapa del flujo",
-        en: "Bridge API with clear contracts per flow stage",
+        es: "Extender el código C#/.NET existente en lugar de reescribirlo desde cero",
+        en: "Extend existing C#/.NET instead of rewriting from scratch",
+      },
+      {
+        es: "API puente NestJS con contratos claros por etapa del flujo",
+        en: "NestJS bridge API with clear contracts per flow stage",
       },
       {
         es: "Manejo de fallos y reintentos en integraciones frágiles",
@@ -569,8 +573,8 @@ export const projects: Project[] = [
       },
     ],
     outcome: {
-      es: "Ciclo de actualización ERP reducido de ~40 min a ~2 min. Case study sin exponer IP del cliente.",
-      en: "ERP update cycle cut from ~40 min to ~2 min. Case study without exposing client IP.",
+      es: "Ciclo de actualización ERP reducido ~95% (~40 min → ~2 min). Case study sin exponer IP del cliente.",
+      en: "ERP update cycle cut ~95% (~40 min → ~2 min). Case study without exposing client IP.",
     },
     companyId: "sofinsas",
     disclaimer: {
@@ -660,6 +664,52 @@ export const projects: Project[] = [
     demoUrl: "https://rhythm-elegance.vercel.app",
     repoUrl: "https://github.com/Jgmaza/rhythm-elegance-landing",
     preview: "/previews/rhythm-elegance.png",
+  },
+  {
+    slug: "hold-the-box",
+    title: "Hold the Box",
+    tagline: {
+      es: "2.º general · Mejor diseño — Game Jam 2026",
+      en: "2nd overall · Best Design — Game Jam 2026",
+    },
+    summary: {
+      es: "Game Jam 2026 (48h, tema Better Together): coop local 2P en el mismo teclado. Dos jugadores cargan una sola caja; el reto es no botar, no mojar, no soltar. Stack PlayCanvas + Vite. Demo pública en GitHub Pages.",
+      en: "Game Jam 2026 (48h, Better Together theme): local 2P co-op on one keyboard. Two players carry one box — don't drop, soak, or let go. PlayCanvas + Vite. Live demo on GitHub Pages.",
+    },
+    category: "hackathon",
+    presentation: "demo",
+    featured: true,
+    year: "2026",
+    role: {
+      es: "Lead + deploy",
+      en: "Lead + deploy",
+    },
+    stack: ["PlayCanvas", "Vite", "TypeScript", "GitHub Pages"],
+    problem: {
+      es: "Volver a la emoción de jugar de a dos en el mismo PC, cuando cada uno hoy juega cosas distintas.",
+      en: "Bring back the feeling of playing together on one PC when everyone now plays alone.",
+    },
+    decisions: [
+      {
+        es: "Coop local 2P con una sola cámara y una caja compartida",
+        en: "Local 2P co-op with one camera and one shared box",
+      },
+      {
+        es: "Scope jam-friendly: campaña corta + ranking arcade",
+        en: "Jam-friendly scope: short campaign + arcade ranking",
+      },
+      {
+        es: "Deploy público en GitHub Pages para jueceo y demos",
+        en: "Public GitHub Pages deploy for judging and demos",
+      },
+    ],
+    outcome: {
+      es: "2.º lugar general y Mejor diseño. Demo: https://jgmaza.github.io/hold-the-box/",
+      en: "2nd place overall and Best Design. Demo: https://jgmaza.github.io/hold-the-box/",
+    },
+    demoUrl: "https://jgmaza.github.io/hold-the-box/",
+    repoUrl: "https://github.com/Jgmaza/hold-the-box",
+    preview: "/previews/hold-the-box.png",
   },
   {
     slug: "edunova",

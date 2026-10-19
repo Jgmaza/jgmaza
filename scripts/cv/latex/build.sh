@@ -34,6 +34,7 @@ if [[ -d "$LABORAL_CV" ]]; then
   rsync -a --delete \
     --exclude out \
     --exclude '*.pdf' \
+    --exclude jd \
     "$ROOT/" "$LABORAL_CV/_fuente/"
 fi
 

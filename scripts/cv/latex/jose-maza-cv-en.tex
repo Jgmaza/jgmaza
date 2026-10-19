@@ -9,9 +9,6 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{setspace}
-\usepackage{tabularx}
-\usepackage{fontawesome5}
-
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
 
@@ -37,19 +34,20 @@
   {}{0pt}{\MakeUppercase}[\vspace{-0.35em}{\color{sectionline}\titlerule[0.7pt]}\vspace{0.35em}]
 \titlespacing*{\section}{0pt}{0.85em}{0.35em}
 
+% Single-column ATS layout: no right-aligned dates (\hfill looks like 2 columns to parsers)
 \newcommand{\Job}[4]{%
-  \noindent\textbf{#1}\hfill {\small #3}\\[-0.05em]
-  \textit{#2}\hfill {\small\color{muted}#4}\\[0.15em]
+  \noindent\textbf{#1}\\[-0.05em]
+  {\small\textit{#2} \textbar\ #4 \textbar\ #3}\\[0.15em]
 }
 
 \newcommand{\Edu}[4]{%
-  \noindent\textbf{#1}\hfill {\small #3}\\[-0.05em]
-  \textit{#2}\hfill {\small\color{muted}#4}\\[0.25em]
+  \noindent\textbf{#1}\\[-0.05em]
+  {\small\textit{#2} \textbar\ #4 \textbar\ #3}\\[0.25em]
 }
 
 \newcommand{\Award}[4]{%
-  \noindent\textbf{#1}\hfill {\small #3}\\[-0.05em]
-  \textit{#2}\\[0.05em]
+  \noindent\textbf{#1}\\[-0.05em]
+  {\small\textit{#2} \textbar\ #3}\\[0.05em]
   {\small #4}\\[0.35em]
 }
 
@@ -59,13 +57,13 @@
   {\LARGE\bfseries José Gabriel Maza Mendoza}\\[0.25em]
   {\large\textit{Systems Engineer · Fullstack / Product Engineer}}\\[0.45em]
   {\small
-    \faEnvelope\ \href{mailto:mazamendoza123@gmail.com}{mazamendoza123@gmail.com}
-    \quad \faPhone\ (+57) 300 8420902
-    \quad \faMapMarker*\ Barranquilla, Colombia
+    \href{mailto:mazamendoza123@gmail.com}{mazamendoza123@gmail.com}
+    \quad|\quad (+57) 300 8420902
+    \quad|\quad Barranquilla, Colombia
   }\\[0.15em]
   {\small
-    \faGithub\ \href{https://github.com/Jgmaza}{github.com/Jgmaza}
-    \quad \faGlobe\ \href{https://jgmaza.vercel.app}{jgmaza.vercel.app}
+    GitHub: \href{https://github.com/Jgmaza}{github.com/Jgmaza}
+    \quad|\quad Portfolio: \href{https://jgmaza.vercel.app}{jgmaza.vercel.app}
   }
 \end{center}
 
@@ -73,71 +71,66 @@
 Systems Engineer and fullstack developer focused on product engineering. I connect
 interfaces, APIs, data, and infrastructure to take solutions from problem definition
 to deployment. Experience spans web development, system integrations, internal tools,
-and AI assistants --- using React, Next.js, TypeScript, NestJS, FastAPI, and Supabase
-based on each project's needs. Comfortable owning the full cycle: design, implementation,
-quality, and deploy.
+and AI assistants --- using Next.js, React, TypeScript, NestJS, FastAPI, and Supabase
+based on each project's needs, with Next.js as the primary frontend stack. Comfortable
+owning the full cycle: design, implementation, quality, and deploy.
 
 \section{Work experience}
 
 \Job{Fullstack Developer}{Ministry of Mines and Energy}{Sep 2025 -- Present}{Barranquilla, Colombia}
-Responsibilities: building and maintaining several institutional production tracks in
-parallel --- service integrator / interoperability gateway, energy-surveillance platform
-(dosimetry), and stakeholder-mapping app --- with focus on reliable APIs, data consistency,
-and usable frontends under institutional constraints.
+Parallel delivery of a service integrator, energy-surveillance (dosimetry), and
+stakeholder-mapping apps under institutional constraints.
 \begin{itemize}
-  \item Grew the integrator's interoperability surface from \textbf{2 to 6}
-        integration route/families on an HTTP gateway (APISIX + FastAPI + Vue).
-  \item Unified dosimetry end-to-end (Node API, SQL Server, Angular) over test volumes
-        on the order of \textbf{$\sim$629k} historical and \textbf{$\sim$61k} new
-        records; repair CLI/scripts recovered and synced historical data into the
-        unified layer.
-  \item Accelerated delivery closure versus the prior pace reported by the area
-        (work had been delayed under the previous developer), sustaining multiple
-        stories in parallel with documented QA deploys.
+  \item Increased interoperability coverage by \textbf{200\%} (from 2 to 6 route/families)
+        by shipping an HTTP gateway with APISIX, FastAPI, and Vue.
+  \item Unified dosimetry end-to-end across $\sim$\textbf{629k} historical and
+        $\sim$\textbf{61k} new records, recovering inconsistent data with repair
+        CLI/scripts into the unified layer (Node, SQL Server, Angular).
+  \item Accelerated delivery closure versus the area's prior pace by sustaining multiple
+        stories in parallel and running \textbf{CI/CD} to QA (Jenkins, Docker, build tags,
+        and reproducible deploy guides).
 \end{itemize}
 
 \vspace{0.35em}
 \Job{Fullstack Developer}{Guarapo Labs}{Jun 2025 -- Aug 2025}{Barranquilla, Colombia}
-Supported international client delivery and a new product spanning frontend, backend,
-and AI. Built internal tools with Next.js and Supabase.
+Internal tools and a new product (front, back, AI) with Next.js and Supabase.
 \begin{itemize}
-  \item After joining, we accelerated delivery and caught up to the schedule; on the
-        visual/front track I kept UI tasks current.
+  \item Accelerated team delivery until the schedule was back on track, keeping the
+        UI/front track current with Next.js and Supabase.
 \end{itemize}
 
 \vspace{0.35em}
 \Job{Fullstack Developer · AI / automation}{Clazz Dev}{Feb 2025 -- May 2025}{Barranquilla, Colombia}
-Designed AI-driven automation and assistants with OpenAI, n8n, FastAPI, and Python ---
-agents inside real sales/ops workflows, not only chat UIs.
+Automation and agents inside real sales/ops workflows (OpenAI, n8n, FastAPI, Python).
 \begin{itemize}
-  \item Sales-agent workflows that cut human operations from about \textbf{7 people to 2},
-        with the agent managing the sales cycle end to end.
+  \item Reduced human sales operations by $\sim$\textbf{71\%} (from $\sim$7 people to 2)
+        by designing agent workflows that owned the sales cycle end to end.
 \end{itemize}
 
 \vspace{0.35em}
 \Job{Fullstack Developer}{I-Cluster}{Jun 2024 -- Jan 2025}{Barranquilla, Colombia}
-Developed software for a municipal emotional-health initiative (Tolú) with React and
-Express. Cross-functional delivery of features that supported wellbeing programs, with
-emphasis on reliability and maintainable shipping.
+\begin{itemize}
+  \item Delivered fullstack features (React + Express) for a municipal emotional-health
+        initiative in Tolú, in a cross-functional team focused on reliability.
+\end{itemize}
 
 \vspace{0.35em}
 \Job{Fullstack Developer}{Infinity Tech Consulting}{Apr 2022 -- Jun 2024}{Barranquilla, Colombia}
-Built and maintained fullstack web applications with Next.js, Flask, and Prisma ---
-frontend and backend --- deployed on AWS and Vercel.
+Fullstack apps with Next.js, Flask, and Prisma on AWS and Vercel.
 \begin{itemize}
-  \item \textbf{Commodo}: loyalty / points platform still in production; owned day-to-day
+  \item Kept the \textbf{Commodo} loyalty platform in production by owning day-to-day
         front work across the client's \textbf{3 web platforms}.
-  \item Built a POS from scratch in $\approx$\textbf{1 month}, integrating Commodo APIs,
-        Siigo, and external lookup services (e.g.\ departments).
+  \item Delivered a POS from scratch in $\approx$\textbf{1 month} by integrating Commodo
+        APIs, Siigo, and external lookup services (e.g.\ departments).
 \end{itemize}
 
 \vspace{0.35em}
 \Job{Support / Freelance (MIOBOX)}{Sofin SAS}{Nov 2021 -- Jan 2022; freelance $\approx$2 months in 2026}{Barranquilla, Colombia}
-Early chapter: electronic-invoicing support and ERP code testing. Freelance return:
-NestJS SOAP/REST bridge between ERP and plant operations (orders, consumption, delivery close).
+E-invoicing support (2021--22) and ERP$\leftrightarrow$plant integrations (2026).
 \begin{itemize}
-  \item Cut the ERP update cycle from about \textbf{40 minutes to $\sim$2 minutes}
-        via the integration bridge.
+  \item Reduced ERP update time by $\sim$\textbf{95\%} (from $\sim$40 min to $\sim$2 min)
+        by modifying and extending the existing \textbf{C\# / .NET} MIOBOX codebase and
+        wiring it through a NestJS SOAP/REST bridge to plant operations.
 \end{itemize}
 
 \section{Education}
@@ -145,12 +138,15 @@ NestJS SOAP/REST bridge between ERP and plant operations (orders, consumption, d
 Distinction: Outstanding Student.
 
 \section{Skills}
-\textbf{Core:} TypeScript, React, JavaScript, Java, Python, NestJS, FastAPI, Node/Express,
-REST APIs, SQL (MySQL, PostgreSQL, SQL Server), Git.\\
-\textbf{Also used in production:} Next.js, Vue 3, Angular, Prisma, Supabase, AWS, Vercel,
-APISIX / API gateways, SOAP integrations, n8n, HTML/CSS/Tailwind, Linux.
+\textbf{Core:} Next.js, TypeScript, React, JavaScript, Java, Python, C\# / .NET, NestJS,
+FastAPI, Node/Express, REST APIs, SQL (MySQL, PostgreSQL, SQL Server), Git.\\
+\textbf{Also used in production:} Vue 3, Angular, Prisma, Supabase, AWS, Vercel,
+APISIX / API gateways, SOAP integrations, n8n, Docker, CI/CD (Jenkins), HTML/CSS/Tailwind,
+Linux.
 
 \section{Awards \& recognition}
+\Award{2nd Place Overall · Best Design}{Game Jam 2026 · Hold the Box}{2026}{%
+  48h Game Jam: local 2P co-op (PlayCanvas). Team lead + deploy.}
 \Award{1st Place --- Interledger Hackathon}{Ledger One}{2026}{%
   First place with Ledger One, a team project around open payments / Interledger.}
 \Award{Best Project Using ShadAI · 4th Overall}{BarranquillIA 2025 · EduNova}{2025}{%

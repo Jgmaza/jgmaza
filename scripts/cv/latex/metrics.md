@@ -6,16 +6,17 @@ Editorial status: `CONFIRMED` | `SOFT` | `PENDING` | `NOT_PUBLIC`
 
 | Metric | Status | Notes |
 |---|---|---|
-| Integrador: 2 → 6 interoperability routes/families | CONFIRMED | Do **not** name the families/IPs in CV |
-| Dosimetría unificada: ~629k HIST + ~61k NUEVO (test volumes) | CONFIRMED | From monthly informe evidence |
+| Integrador: 2 → 6 (+**200%** coverage) | CONFIRMED | Do **not** name the families/IPs in CV |
+| Dosimetría unificada: ~629k HIST + ~61k NUEVO (test volumes) | CONFIRMED | Absolute volume; no clean before/after % |
 | Historical repair/recovery CLI/scripts | CONFIRMED | Repair lote + sync unificado |
 | Faster delivery closure vs previous developer | SOFT | Area feedback; no invented % |
+| CI/CD to QA (Jenkins, Docker, build tags, deploy docs) | CONFIRMED | MinMinas monthly informes / deploy guides |
 
 ## Clazz Dev (Feb 2025 – May 2025)
 
 | Metric | Status | Notes |
 |---|---|---|
-| Sales agent workflows reduced human ops from ~7 to ~2 people | CONFIRMED | Agent handled sales workflow types |
+| Sales ops ~7 → ~2 people (≈**−71%**) | CONFIRMED | Agent handled sales workflow types |
 | Specific workflow dashboard metrics | PENDING | Existed; numbers not recalled |
 | Failed flagship project | NOT_PUBLIC | Do not publish |
 
@@ -40,7 +41,7 @@ Editorial status: `CONFIRMED` | `SOFT` | `PENDING` | `NOT_PUBLIC`
 
 | Metric | Status | Notes |
 |---|---|---|
-| ERP update cycle 40 min → ~2 min | CONFIRMED | NestJS SOAP/REST bridge |
+| ERP update cycle 40 min → ~2 min (≈**−95%**) | CONFIRMED | Modify/extend existing C#/.NET MIOBOX + NestJS SOAP/REST bridge |
 
 ## Hackathons (awards)
 
