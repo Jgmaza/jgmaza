@@ -128,11 +128,11 @@ No inventes otros empleadores o fechas. La información siguiente es el punto de
 - Incluir disclaimer de cliente.
 
 ### I-Cluster
-- Jun 2024–ene 2025.
-- Proyecto relacionado con salud emocional en Tolú.
-- React + Express.
-- Publicación `LORE`.
-- Preguntar por mi rol, funcionalidades y datos autorizados.
+- 2024 · 3 meses.
+- App de salud emocional para Tolú (Sucre).
+- Fullstack React + Express; apoyo en decisiones AWS.
+- Al salir: app lista para iniciar pruebas.
+- Publicación `LORE` (sin demo pública).
 
 ### Infinity Tech Consulting
 - Abr 2022–jun 2024.

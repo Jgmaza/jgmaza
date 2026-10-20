@@ -11,16 +11,79 @@ const ALIASES: Record<string, string> = {
   "Vue 3": "Vue",
   "AI concepts": "AI / Agents",
   Tailwind: "Tailwind CSS",
+  OpenAI: "AI / Agents",
+  Claude: "AI / Agents",
+  Vapi: "AI / Agents",
+  "TanStack Table": "TanStack",
+  "TanStack Query": "TanStack",
+  "React Query": "TanStack",
+  "TanStack Router": "TanStack",
+  "TanStack Form": "TanStack",
 };
 
-/** Labels that are roles/products, not skills to list. */
+/** Labels that are roles/products/noise, not skills to list. */
 const SKIP = new Set([
   "Fullstack",
   "Product rebuild",
   "APIs",
   "Commodo",
   "E-invoicing",
+  "Clean Architecture",
+  "MSW",
+  "Cross-functional",
+  "QA",
+  "Internal UI",
+  "JS patches",
+  "Python notify",
+  "LDAP",
+  "Balances",
+  "Voice stack",
+  "WhatsApp",
+  "Pages",
+  "Motion",
+  "OCR",
+  "Spotify",
+  "Siigo",
+  "SOAP",
+  "REST",
+  "ERP",
+  // one-off vendors / niche libs (mismo filtro que retro)
+  "Deepgram",
+  "ElevenLabs",
+  "DynamoDB",
+  "AWS Lambda",
+  "Serverless",
+  "GitHub Pages",
+  "Interledger",
+  "Open Payments",
+  "PlayCanvas",
+  "MySQL",
+  "ShadAI",
+  "Spotify API",
 ]);
+
+/**
+ * Career knobs — Next.js has been the default product choice since Infinity
+ * (Apr 2022 → present). React is chosen when a SPA/Vite fit makes more sense,
+ * not as equal tenure to Next.
+ */
+const SKILL_FLOOR: Record<string, number> = {
+  "Next.js": 3.5,
+  TypeScript: 3.5,
+  React: 2,
+};
+
+const SKILL_WEIGHT: Record<string, number> = {
+  "Next.js": 1.15,
+  TypeScript: 1.05,
+  React: 0.75,
+};
+
+const SKILL_CAP: Record<string, number> = {
+  "Next.js": 4,
+};
+
+const MAX_YEARS = 6;
 
 export type SkillProjectRef = {
   slug: string;
@@ -77,7 +140,14 @@ function estimateYears(opts: {
     featuredCount * 0.2;
 
   const rounded = Math.round(Math.max(weighted, projectCount > 0 || companyCount > 0 ? 0.5 : 0) * 2) / 2;
-  return Math.min(6, Math.max(0.5, rounded));
+  return Math.min(MAX_YEARS, Math.max(0.5, rounded));
+}
+
+function finalizeYears(label: string, raw: number): number {
+  const weighted = raw * (SKILL_WEIGHT[label] ?? 1);
+  const floored = Math.max(weighted, SKILL_FLOOR[label] ?? 0);
+  const cap = SKILL_CAP[label] ?? MAX_YEARS;
+  return Math.min(cap, MAX_YEARS, Math.round(floored * 2) / 2);
 }
 
 function tierFromScore(score: number, profileTier?: SkillTier): SkillTier {
@@ -118,8 +188,14 @@ export function buildSkillExperience(): SkillExperience[] {
 
   for (const p of projects) {
     const years = yearsFromText(p.year);
-    for (const s of p.stack) {
-      touch(s, (acc) => {
+    const keys = p.stack
+      .map((s) => canonicalize(s))
+      .filter((k): k is string => Boolean(k));
+    const hasNext = keys.includes("Next.js");
+    for (const key of keys) {
+      // React under a Next app is the runtime — credit Next, not twin React tenure
+      if (hasNext && key === "React") continue;
+      touch(key, (acc) => {
         acc.projects.set(p.slug, {
           slug: p.slug,
           title: p.title,
@@ -134,21 +210,38 @@ export function buildSkillExperience(): SkillExperience[] {
 
   for (const c of companies) {
     const years = yearsFromText(c.dates.es);
-    for (const s of c.stack) {
-      touch(s, (acc) => {
+    const keys = c.stack
+      .map((s) => canonicalize(s))
+      .filter((k): k is string => Boolean(k));
+    const hasNext = keys.includes("Next.js");
+    for (const key of keys) {
+      if (hasNext && key === "React") continue;
+      touch(key, (acc) => {
         acc.companies.add(c.name);
         acc.years.push(...years);
       });
     }
     for (const ch of c.chapters ?? []) {
       const chYears = yearsFromText(ch.dates.es);
-      for (const s of ch.stack) {
-        touch(s, (acc) => {
+      const chKeys = ch.stack
+        .map((s) => canonicalize(s))
+        .filter((k): k is string => Boolean(k));
+      const chHasNext = chKeys.includes("Next.js");
+      for (const key of chKeys) {
+        if (chHasNext && key === "React") continue;
+        touch(key, (acc) => {
           acc.companies.add(c.name);
           acc.years.push(...chYears);
         });
       }
     }
+  }
+
+  // Anchor Next tenure to Infinity → present even if stacks under-tag it
+  if (!map.has("Next.js")) {
+    map.set("Next.js", { projects: new Map(), companies: new Set(), years: [2022, 2026] });
+  } else {
+    map.get("Next.js")!.years.push(2022, 2026);
   }
 
   const profileByLabel = new Map(profileSkills.map((s) => [s.label, s]));
@@ -160,19 +253,24 @@ export function buildSkillExperience(): SkillExperience[] {
     const featuredCount = projectList.filter((p) => p.featured).length;
     const companyList = [...acc.companies].sort();
     const yearList = [...new Set(acc.years)].sort((a, b) => a - b);
-    const estimatedYears = estimateYears({
-      years: yearList,
-      projectCount: projectList.length,
-      companyCount: companyList.length,
-      featuredCount,
-    });
+    const estimatedYears = finalizeYears(
+      label,
+      estimateYears({
+        years: yearList,
+        projectCount: projectList.length,
+        companyCount: companyList.length,
+        featuredCount,
+      }),
+    );
     const profile = profileByLabel.get(label);
     const yearSpan =
-      yearList.length >= 2
-        ? `${yearList[0]}–${yearList[yearList.length - 1]}`
-        : yearList.length === 1
-          ? String(yearList[0])
-          : "—";
+      label === "Next.js" && yearList.length > 0
+        ? `${Math.min(...yearList, 2022)}–${Math.max(...yearList, 2026)}`
+        : yearList.length >= 2
+          ? `${yearList[0]}–${yearList[yearList.length - 1]}`
+          : yearList.length === 1
+            ? String(yearList[0])
+            : "—";
 
     return {
       label,

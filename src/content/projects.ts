@@ -419,7 +419,7 @@ export const projects: Project[] = [
       es: "Frontend freelance",
       en: "Frontend freelance",
     },
-    stack: ["React", "Vite", "TanStack Table", "Redux", "Vercel"],
+    stack: ["React", "Vite", "TanStack", "Redux", "Vercel"],
     problem: {
       es: "Equipos necesitan una superficie operativa clara para conversaciones y seguimiento.",
       en: "Teams need a clear operational surface for conversations and follow-up.",
