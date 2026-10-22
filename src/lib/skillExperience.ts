@@ -47,7 +47,6 @@ const SKIP = new Set([
   "SOAP",
   "REST",
   "ERP",
-  // one-off vendors / niche libs (mismo filtro que retro)
   "Deepgram",
   "ElevenLabs",
   "DynamoDB",
@@ -60,6 +59,25 @@ const SKIP = new Set([
   "MySQL",
   "ShadAI",
   "Spotify API",
+]);
+
+/** Same curated set as the retro portfolio expand modal. */
+const ALLOW = new Set([
+  "TypeScript",
+  "Next.js",
+  "Vite",
+  "Tailwind CSS",
+  "React",
+  "AI / Agents",
+  "Supabase",
+  "FastAPI",
+  "Vercel",
+  "NestJS",
+  "PostgreSQL",
+  "Python",
+  "Redux",
+  "shadcn/ui",
+  "TanStack",
 ]);
 
 /**
@@ -109,7 +127,9 @@ export type SkillExperience = {
 function canonicalize(raw: string): string | null {
   const trimmed = raw.trim();
   if (!trimmed || SKIP.has(trimmed)) return null;
-  return ALIASES[trimmed] ?? trimmed;
+  const key = ALIASES[trimmed] ?? trimmed;
+  if (!ALLOW.has(key)) return null;
+  return key;
 }
 
 function yearsFromText(text: string): number[] {
