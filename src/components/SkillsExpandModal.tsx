@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useId, useMemo, useRef } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLocale } from "@/lib/locale";
 import {
   buildSkillExperience,
@@ -19,6 +20,11 @@ export function SkillsExpandModal({ open, onClose }: SkillsExpandModalProps) {
   const titleId = useId();
   const closeRef = useRef<HTMLButtonElement>(null);
   const skills = useMemo(() => buildSkillExperience(), []);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -36,9 +42,9 @@ export function SkillsExpandModal({ open, onClose }: SkillsExpandModalProps) {
     };
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!open || !mounted) return null;
 
-  return (
+  return createPortal(
     <div className="skills-modal" role="presentation">
       <button
         type="button"
@@ -83,7 +89,8 @@ export function SkillsExpandModal({ open, onClose }: SkillsExpandModalProps) {
           ))}
         </ul>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
