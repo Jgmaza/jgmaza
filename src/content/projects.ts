@@ -465,7 +465,7 @@ export const projects: Project[] = [
       es: "Frontend / fullstack en agency",
       en: "Frontend / fullstack in agency",
     },
-    stack: ["Next.js", "React", "Flask", "Prisma", "AWS", "Vercel"],
+    stack: ["Next.js", "React", "Flask", "Prisma", "AWS", "Amplify", "Vercel"],
     problem: {
       es: "El cliente necesitaba operar fidelización y administración web de forma continua, no un one-off.",
       en: "The client needed ongoing loyalty ops and web admin — not a one-off.",
@@ -601,7 +601,7 @@ export const projects: Project[] = [
       es: "Colaborador — arquitectura / demos web",
       en: "Collaborator — architecture / web demos",
     },
-    stack: ["AWS Lambda", "TypeScript", "PostgreSQL", "DynamoDB", "Claude"],
+    stack: ["AWS", "AWS Lambda", "TypeScript", "PostgreSQL", "DynamoDB", "Claude"],
     problem: {
       es: "Millones de transacciones de cafeterías escolares no llegan al padre ni informan a la operación.",
       en: "Millions of school cafeteria transactions never reach parents or inform operations.",

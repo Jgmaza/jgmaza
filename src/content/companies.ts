@@ -120,8 +120,8 @@ export const companies: Company[] = [
       en: "Fullstack developer",
     },
     summary: {
-      es: "App de salud emocional para Tolú (Sucre). Fullstack con React (front) y Express (back); también apoyé decisiones de infraestructura (p. ej. AWS). Contrato de 3 meses: al salir dejamos la app lista para iniciar pruebas.",
-      en: "Emotional-health app for Tolú (Sucre). Fullstack with React (front) and Express (back); also supported infrastructure decisions (e.g. AWS). 3-month contract: by departure the app was ready to begin testing.",
+      es: "App de salud emocional para Tolú (Sucre). Fullstack con React (front) y Express (back); también tomé/apoyé decisiones de infraestructura en AWS. Contrato de 3 meses: al salir dejamos la app lista para iniciar pruebas.",
+      en: "Emotional-health app for Tolú (Sucre). Fullstack with React (front) and Express (back); also made/supported AWS infrastructure decisions. 3-month contract: by departure the app was ready to begin testing.",
     },
     status: "cleared",
     stack: ["React", "Express", "JavaScript", "AWS"],
@@ -143,11 +143,11 @@ export const companies: Company[] = [
       en: "Fullstack engineer",
     },
     summary: {
-      es: "Agency fullstack (Next.js, Flask, Prisma, AWS/Vercel). Pieza central: Commodo — fidelización tipo puntos que sigue viva; front en las 3 plataformas web del cliente. También un POS desde cero (~1 mes) con APIs Commodo, Siigo y consultas externas. Al inicio aprendí React en días para desbloquear un proyecto lento del equipo.",
-      en: "Agency fullstack (Next.js, Flask, Prisma, AWS/Vercel). Core piece: Commodo — points-style loyalty still live; front across the client's 3 web platforms. Also a POS from scratch (~1 month) with Commodo, Siigo, and external lookup APIs. Early on, learned React in days to unblock a slow team project.",
+      es: "Agency fullstack (Next.js, Flask, Prisma) con AWS Amplify, Lambdas y Vercel. Pieza central: Commodo — fidelización tipo puntos que sigue viva; front en las 3 plataformas web del cliente. También un POS desde cero (~1 mes) con APIs Commodo, Siigo y consultas externas. Al inicio aprendí React en días para desbloquear un proyecto lento del equipo.",
+      en: "Agency fullstack (Next.js, Flask, Prisma) on AWS Amplify, Lambdas, and Vercel. Core piece: Commodo — points-style loyalty still live; front across the client's 3 web platforms. Also a POS from scratch (~1 month) with Commodo, Siigo, and external lookup APIs. Early on, learned React in days to unblock a slow team project.",
     },
     status: "cleared",
-    stack: ["Next.js", "Flask", "Prisma", "AWS", "Vercel", "Siigo"],
+    stack: ["Next.js", "Flask", "Prisma", "AWS", "Amplify", "Vercel", "Siigo"],
     projectSlugs: ["commodo", "infinity-pos"],
     note: {
       es: "Lore de agency — sin demos públicas de cliente.",

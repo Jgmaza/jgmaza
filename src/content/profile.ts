@@ -13,6 +13,7 @@ export const skills: Skill[] = [
   { label: "FastAPI", ticks: 3, tier: "STRONG" },
   { label: "Supabase", ticks: 3, tier: "STRONG" },
   { label: "Vercel", ticks: 3, tier: "STRONG" },
+  { label: "AWS", ticks: 3, tier: "STRONG" },
   { label: "AI / Agents", ticks: 2, tier: "FAMILIAR" },
 ];
 

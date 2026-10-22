@@ -19,6 +19,12 @@ const ALIASES: Record<string, string> = {
   "React Query": "TanStack",
   "TanStack Router": "TanStack",
   "TanStack Form": "TanStack",
+  "AWS Lambda": "AWS",
+  Amplify: "AWS",
+  "AWS Amplify": "AWS",
+  DynamoDB: "AWS",
+  Serverless: "AWS",
+  S3: "AWS",
 };
 
 /** Labels that are roles/products/noise, not skills to list. */
@@ -49,9 +55,6 @@ const SKIP = new Set([
   "ERP",
   "Deepgram",
   "ElevenLabs",
-  "DynamoDB",
-  "AWS Lambda",
-  "Serverless",
   "GitHub Pages",
   "Interledger",
   "Open Payments",
@@ -78,16 +81,19 @@ const ALLOW = new Set([
   "Redux",
   "shadcn/ui",
   "TanStack",
+  "AWS",
 ]);
 
 /**
  * Career knobs — Next.js has been the default product choice since Infinity
  * (Apr 2022 → present). React is chosen when a SPA/Vite fit makes more sense,
- * not as equal tenure to Next.
+ * not as equal tenure to Next. AWS: Amplify/Lambda since Infinity + infra
+ * calls at I-Cluster + serverless hackathons (~2.5–3y practical).
  */
 const SKILL_FLOOR: Record<string, number> = {
   "Next.js": 3.5,
   TypeScript: 3.5,
+  AWS: 2.5,
   React: 2,
 };
 
@@ -99,6 +105,7 @@ const SKILL_WEIGHT: Record<string, number> = {
 
 const SKILL_CAP: Record<string, number> = {
   "Next.js": 4,
+  AWS: 3,
 };
 
 const MAX_YEARS = 6;
@@ -264,6 +271,13 @@ export function buildSkillExperience(): SkillExperience[] {
     map.get("Next.js")!.years.push(2022, 2026);
   }
 
+  // AWS tenure: Infinity (Amplify/Lambda) → I-Cluster infra → hackathon serverless
+  if (!map.has("AWS")) {
+    map.set("AWS", { projects: new Map(), companies: new Set(), years: [2022, 2026] });
+  } else {
+    map.get("AWS")!.years.push(2022, 2026);
+  }
+
   const profileByLabel = new Map(profileSkills.map((s) => [s.label, s]));
 
   const rows: SkillExperience[] = [...map.entries()].map(([label, acc]) => {
@@ -284,7 +298,7 @@ export function buildSkillExperience(): SkillExperience[] {
     );
     const profile = profileByLabel.get(label);
     const yearSpan =
-      label === "Next.js" && yearList.length > 0
+      (label === "Next.js" || label === "AWS") && yearList.length > 0
         ? `${Math.min(...yearList, 2022)}–${Math.max(...yearList, 2026)}`
         : yearList.length >= 2
           ? `${yearList[0]}–${yearList[yearList.length - 1]}`
